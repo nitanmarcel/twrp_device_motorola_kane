@@ -1,0 +1,66 @@
+/*
+   Copyright (C) 2017-2018 The Android Open Source Project
+
+   Redistribution and use in source and binary forms, with or without
+   modification, are permitted provided that the following conditions are
+   met:
+    * Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above
+      copyright notice, this list of conditions and the following
+      disclaimer in the documentation and/or other materials provided
+      with the distribution.
+    * Neither the name of The Linux Foundation nor the names of its
+      contributors may be used to endorse or promote products derived
+      from this software without specific prior written permission.
+
+   THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
+   WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+   MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
+   ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
+   BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+   CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+   SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+   BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+   WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+   OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+   IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+
+#include <cstdlib>
+#include <unistd.h>
+#include <fcntl.h>
+#include <android-base/logging.h>
+#include <android-base/properties.h>
+
+#include "property_service.h"
+#include "log.h"
+
+namespace android {
+namespace init {
+
+void vendor_load_properties() {
+    int boot_device = stoi(android::base::GetProperty("ro.boot.device", ""));
+
+    switch (boot_device) {
+    case troika:
+        /* Moto One Action */
+        property_set("ro.product.model", "Motorola_One_Action");
+        property_set("ro.build.product", "one_action");
+        property_set("ro.product.device", "one_action");
+        property_set("ro.vendor.product.device", "one_action");
+        break;
+    case kane:
+        /* Moto One Vision */
+        property_set("ro.product.model", "Motorola_One_Vision");
+        property_set("ro.build.product", "OnePlus3");
+        property_set("ro.product.device", "one_vision");
+        property_set("ro.vendor.product.device", "one_vision");
+        break;
+    default:
+        LOG(ERROR) << __func__ << ": unexcepted boot device!";
+    }
+}
+
+}  // namespace init
+}  // namespace android

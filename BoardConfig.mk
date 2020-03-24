@@ -25,48 +25,47 @@
 
 # Architecture
 TARGET_ARCH := arm64
-TARGET_ARCH_VARIANT := armv8-2a
+TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
-TARGET_CPU_VARIANT := cortex-a75
+TARGET_CPU_VARIANT := cortex-a73
 
 TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv8-a
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
-TARGET_2ND_CPU_VARIANT := cortex-a75
+TARGET_2ND_CPU_VARIANT := cortex-a53
 
 ENABLE_CPUSETS := true
 ENABLE_SCHEDBOOST := true
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := msmnile
+TARGET_BOOTLOADER_BOARD_NAME := exynos5
 TARGET_NO_BOOTLOADER := true
 TARGET_USES_UEFI := true
 
 # Kernel
-BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom androidboot.console=ttyMSM0 androidboot.memcg=1 lpm_levels.sleep_disabled=1 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 service_locator.enable=1 swiotlb=2048 firmware_class.path=/vendor/firmware_mnt/image loop.max_part=7 androidboot.usbcontroller=a600000.dwc3
-BOARD_KERNEL_CMDLINE += skip_override androidboot.fastboot=1
-BOARD_KERNEL_BASE := 0x00000000
+BOARD_KERNEL_CMDLINE := androidboot.hardware=exynos9610 androidboot.console=ttyGS0 androidboot.memcg=1 video=vfb:640x400,bpp=32,memsize=3072000 service_locator.enable=1 swiotlb=2048 loop.max_part=7 androidboot.usbcontroller=13200000.dwc3
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+BOARD_KERNEL_BASE := 0x10008000
 BOARD_KERNEL_PAGESIZE := 4096
-TARGET_PREBUILT_KERNEL := device/oneplus/guacamole/prebuilt/Image.gz-dtb
+TARGET_PREBUILT_KERNEL := device/motorola/troika/prebuilt/Image.gz-dtb
 
 # Platform
-TARGET_BOARD_PLATFORM := msmnile
-TARGET_BOARD_PLATFORM_GPU := qcom-adreno640
-QCOM_BOARD_PLATFORMS += msmnile
+TARGET_BOARD_PLATFORM := exynos5
+TARGET_BOARD_PLATFORM_GPU := mali-g72
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144
 
-BOARD_BOOTIMAGE_PARTITION_SIZE := 100663296
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 100663296
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3640655872
+BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3221225472
 BOARD_SYSTEMIMAGE_JOURNAL_SIZE := 0
 BOARD_SYSTEMIMAGE_EXTFS_INODE_COUNT := 4096
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 115601780736
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 118974455808
 BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := ext4
-BOARD_VENDORIMAGE_PARTITION_SIZE := 1073741824
+BOARD_VENDORIMAGE_PARTITION_SIZE := 805306368
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
@@ -76,8 +75,8 @@ BOARD_USES_RECOVERY_AS_BOOT := true
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 
 # Partitions (listed in the file) to be wiped under recovery.
-TARGET_RECOVERY_WIPE := device/oneplus/guacamole/recovery.wipe
-TARGET_RECOVERY_FSTAB := device/oneplus/guacamole/recovery.fstab
+TARGET_RECOVERY_WIPE := device/motorola/troika/recovery.wipe
+TARGET_RECOVERY_FSTAB := device/motorola/troika/recovery.fstab
 
 
 # Workaround for error copying vendor files to recovery ramdisk
@@ -85,8 +84,8 @@ BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_COPY_OUT_VENDOR := vendor
 
 #Init
-TARGET_INIT_VENDOR_LIB := libinit_oneplus7pro
-TARGET_RECOVERY_DEVICE_MODULES := libinit_oneplus7pro
+TARGET_INIT_VENDOR_LIB := libinit_troika
+TARGET_RECOVERY_DEVICE_MODULES := libinit_troika
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc/
 
 # Recovery
@@ -137,13 +136,11 @@ BOARD_USES_METADATA_PARTITION := true
 
 # Extras
 BOARD_SUPPRESS_SECURE_ERASE := true
-TW_USE_LEDS_HAPTICS := true
+#TW_USE_LEDS_HAPTICS := true
 USE_RECOVERY_INSTALLER := true
-RECOVERY_INSTALLER_PATH := device/oneplus/guacamole/installer
+RECOVERY_INSTALLER_PATH := device/motorola/troika/installer
 TW_EXCLUDE_TWRPAPP := true
 TW_INCLUDE_REPACKTOOLS := true
-TW_HAS_EDL_MODE := true
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
-TW_EXCLUDE_TWRPAPP := true
-TW_NO_USB_STORAGE := true
+#TW_NO_USB_STORAGE := true

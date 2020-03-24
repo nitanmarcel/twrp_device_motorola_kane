@@ -1,8 +1,8 @@
 
-LOCAL_PATH := device/oneplus/guacamole
+LOCAL_PATH := device/motorola/troika
 
 # define hardware platform
-PRODUCT_PLATFORM := msmnile
+PRODUCT_PLATFORM := exynos9610
 
 #TEST
 # A/B support
@@ -13,7 +13,7 @@ PRODUCT_PACKAGES += \
     update_verifier
 
 PRODUCT_PACKAGES += \
-    bootctrl.msmnile
+    bootctrl.exynos9610
 
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
@@ -24,11 +24,10 @@ AB_OTA_POSTINSTALL_CONFIG += \
 # Enable update engine sideloading by including the static version of the
 # boot_control HAL and its dependencies.
 PRODUCT_STATIC_BOOT_CONTROL_HAL := \
-    bootctrl.msmnile \
+    bootctrl.exynos9610 \
     libgptutils \
     libz \
     libcutils
-
 
 # Boot control HAL
 PRODUCT_PACKAGES += \
