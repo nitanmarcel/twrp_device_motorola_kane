@@ -43,7 +43,3 @@ PRODUCT_SYSTEM_PROPERTY_BLACKLIST += \
     ro.product.name \
     ro.build.product \
     ro.display.series
-
-# HACK: Set vendor patch level
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.build.security_patch=2099-12-31
