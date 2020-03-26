@@ -40,27 +40,27 @@ namespace android {
 namespace init {
 
 void vendor_load_properties() {
-    int boot_device = stoi(android::base::GetProperty("ro.boot.device", ""));
+//    std::string boot_device = android::base::GetProperty("ro.boot.device", "");
 
-    switch (boot_device) {
-    case troika:
+//    switch (boot_device) {
+//    case troika:
         /* Moto One Action */
         property_set("ro.product.model", "Motorola_One_Action");
         property_set("ro.build.product", "one_action");
         property_set("ro.product.device", "one_action");
         property_set("ro.vendor.product.device", "one_action");
-        break;
-    case kane:
-        /* Moto One Vision */
-        property_set("ro.product.model", "Motorola_One_Vision");
-        property_set("ro.build.product", "OnePlus3");
-        property_set("ro.product.device", "one_vision");
-        property_set("ro.vendor.product.device", "one_vision");
-        break;
-    default:
-        LOG(ERROR) << __func__ << ": unexcepted boot device!";
+//        break;
+//    case kane:
+//        /* Moto One Vision */
+//        property_set("ro.product.model", "Motorola_One_Vision");
+//        property_set("ro.build.product", "one_vision");
+//        property_set("ro.product.device", "one_vision");
+//        property_set("ro.vendor.product.device", "one_vision");
+//        break;
+//    default:
+//        LOG(ERROR) << __func__ << ": unexcepted boot device!";
     }
 }
 
 }  // namespace init
-}  // namespace android
+//}  // namespace android
