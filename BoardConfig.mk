@@ -55,6 +55,9 @@ TARGET_PREBUILT_KERNEL := device/motorola/troika/prebuilt/Image.gz-dtb
 TARGET_BOARD_PLATFORM := exynos5
 TARGET_BOARD_PLATFORM_GPU := mali-g72
 
+PRODUCT_SOONG_NAMESPACES += device/motorola/troika
+TARGET_RECOVERY_DEVICE_MODULES += android.hardware.boot@1.0-impl.exynos
+
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144
 

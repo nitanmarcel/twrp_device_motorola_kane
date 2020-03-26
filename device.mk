@@ -12,9 +12,6 @@ PRODUCT_PACKAGES += \
     update_engine \
     update_verifier
 
-PRODUCT_PACKAGES += \
-    bootctrl.exynos9610
-
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
     POSTINSTALL_PATH_system=system/bin/otapreopt_script \
@@ -24,7 +21,6 @@ AB_OTA_POSTINSTALL_CONFIG += \
 # Enable update engine sideloading by including the static version of the
 # boot_control HAL and its dependencies.
 PRODUCT_STATIC_BOOT_CONTROL_HAL := \
-    bootctrl.exynos9610 \
     libgptutils \
     libz \
     libcutils

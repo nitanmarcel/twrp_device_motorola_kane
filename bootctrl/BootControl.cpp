@@ -40,14 +40,14 @@ bool BootControl::readMetadata(bctl_metadata_t& data) {
     in.read(reinterpret_cast<char*>(&data), sizeof(bctl_metadata_t));
 
     if (!validateMetadata(data))
-        return -1;
+        return false;
 
     return !in.eof() && !in.fail();
 }
 
 bool BootControl::writeMetadata(bctl_metadata_t& data) {
     if (!validateMetadata(data))
-        return -1;
+        return false;
 
     // We use std::ios::in | std::ios::out even though we only write so that
     // we don't truncate or append to the file, but rather overwrite the file
@@ -119,7 +119,7 @@ Return<void> BootControl::markBootSuccessful(markBootSuccessful_cb _hidl_cb) {
     if (readMetadata(data)) {
         active_slot = !data.slot_info[0].is_active;
         
-        data.slot_info[active_slot].boot_successful = 0;
+        data.slot_info[active_slot].boot_successful = 1;
         data.slot_info[active_slot].tries_remaining = 0;
 
         if (success)
