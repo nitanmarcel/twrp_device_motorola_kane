@@ -23,6 +23,8 @@
 # *not* include it on all devices, so it is safe even with hardware-specific
 # components.
 
+ALLOW_MISSING_DEPENDENCIES=true
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
@@ -41,15 +43,23 @@ ENABLE_SCHEDBOOST := true
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := exynos5
-TARGET_NO_BOOTLOADER := true
+TARGET_NO_BOOTLOADER := false
 TARGET_USES_UEFI := true
 
 # Kernel
-BOARD_KERNEL_CMDLINE := androidboot.hardware=exynos9610 androidboot.console=ttyGS0 androidboot.memcg=1 video=vfb:640x400,bpp=32,memsize=3072000 service_locator.enable=1 swiotlb=2048 loop.max_part=7 androidboot.usbcontroller=13200000.dwc3
-BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
-BOARD_KERNEL_BASE := 0x10008000
-BOARD_KERNEL_PAGESIZE := 4096
+BOARD_KERNEL_CMDLINE := loop.max_part=7 loop.max_part=7 buildvariant=user
+BOARD_KERNEL_BASE := 0x10000000
+BOARD_KERNEL_OFFSET := 0x00008000
+BOARD_RAMDISK_OFFSET := 0x00000000
+BOARD_TAGS_OFFSET := 0x00000000
+BOARD_SECOND_OFFSET := 0x00000000
+BOARD_KERNEL_PAGESIZE := 2048
 TARGET_PREBUILT_KERNEL := device/motorola/troika/prebuilt/Image.gz-dtb
+INSTALLED_2NDBOOTLOADER_TARGET  := device/motorola/troika/prebuilt/second.img
+BOARD_BOOTIMG_HEADER_VERSION := 1
+BOARD_HEADER_SIZE := 1648
+
+BOARD_MKBOOTIMG_ARGS := --base $(BOARD_KERNEL_BASE) --pagesize $(BOARD_KERNEL_PAGESIZE) --kernel_offset $(BOARD_KERNEL_OFFSET) --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --second_offset $(BOARD_SECOND_OFFSET) --tags_offset $(BOARD_TAGS_OFFSET) --header_version $(BOARD_BOOTIMG_HEADER_VERSION) --second $(INSTALLED_2NDBOOTLOADER_TARGET)
 
 # Platform
 TARGET_BOARD_PLATFORM := exynos5
