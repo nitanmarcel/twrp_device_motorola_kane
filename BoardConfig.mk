@@ -121,6 +121,7 @@ TW_DEFAULT_BRIGHTNESS := 163
 TW_Y_OFFSET := 80
 TW_H_OFFSET := -80
 TW_THEME := portrait_hdpi
+TW_NO_HAPTICS := true
 TARGET_RECOVERY_DEVICE_MODULES += android.hardware.boot@1.0
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file
 TARGET_RECOVERY_PIXEL_FORMAT := ABGR_8888
