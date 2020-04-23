@@ -47,7 +47,7 @@ TARGET_NO_BOOTLOADER := false
 TARGET_USES_UEFI := true
 
 # Kernel
-BOARD_KERNEL_CMDLINE := loop.max_part=7 loop.max_part=7 buildvariant=user 
+BOARD_KERNEL_CMDLINE := loop.max_part=7 androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_OFFSET := 0x00008000
 BOARD_RAMDISK_OFFSET := 0x00000000
