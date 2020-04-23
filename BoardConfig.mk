@@ -47,7 +47,7 @@ TARGET_NO_BOOTLOADER := false
 TARGET_USES_UEFI := true
 
 # Kernel
-BOARD_KERNEL_CMDLINE := loop.max_part=7 loop.max_part=7 buildvariant=user
+BOARD_KERNEL_CMDLINE := loop.max_part=7 loop.max_part=7 buildvariant=user 
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_OFFSET := 0x00008000
 BOARD_RAMDISK_OFFSET := 0x00000000
@@ -108,24 +108,18 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 # TWRP specific build flags
 BOARD_HAS_NO_REAL_SDCARD := true
 RECOVERY_SDCARD_ON_DATA := true
-TARGET_RECOVERY_QCOM_RTC_FIX := true
 TW_BRIGHTNESS_PATH := "/sys/devices/platform/148e0000.dsim/brightness"
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_EXCLUDE_SUPERSU := true
 TW_EXTRA_LANGUAGES := true
 TW_INCLUDE_NTFS_3G := true
 AB_OTA_UPDATER := true
-TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_MAX_BRIGHTNESS := 255
 TW_DEFAULT_BRIGHTNESS := 163
-TW_Y_OFFSET := 80
-TW_H_OFFSET := -80
 TW_THEME := portrait_hdpi
 TW_NO_HAPTICS := true
 TARGET_RECOVERY_DEVICE_MODULES += android.hardware.boot@1.0
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file
 TARGET_RECOVERY_PIXEL_FORMAT := ABGR_8888
-TW_NO_SCREEN_BLANK := true
 TW_USE_TOOLBOX := true
 
 # Use mke2fs to create ext4 images
