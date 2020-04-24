@@ -45,7 +45,7 @@ on fs
     symlink /dev/block/platform/${ro.boot.bootdevice} /dev/block/bootdevice
 
 on boot
-
+    setprop sys.usb.config adb
     write /config/usb_gadget/g1/strings/0x409/serialnumber ${ro.serialno}
     write /config/usb_gadget/g1/strings/0x409/manufacturer ${ro.product.manufacturer}
     write /config/usb_gadget/g1/strings/0x409/product ${ro.product.model}
