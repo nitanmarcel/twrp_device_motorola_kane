@@ -21,14 +21,13 @@ AB_OTA_POSTINSTALL_CONFIG += \
 # Enable update engine sideloading by including the static version of the
 # boot_control HAL and its dependencies.
 PRODUCT_STATIC_BOOT_CONTROL_HAL := \
-    libgptutils \
+    bootctrl.exynos9610 \
     libz \
     libcutils
 
 # Boot control HAL
 PRODUCT_PACKAGES += \
-    android.hardware.boot@1.0-impl.exynos \
-    android.hardware.boot@1.0-service \
+    bootctrl.exynos9610
 
 
 

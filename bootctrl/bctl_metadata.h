@@ -17,8 +17,6 @@
 #ifndef SAMSUNG_BCTL_METADATA_H
 #define SAMSUNG_BCTL_METADATA_H
 
-#include <iostream>
-
 #define BCTL_METADATA_PARTITION "/dev/block/bootdevice/by-name/slotinfo"
 #define BCTL_METADATA_OFFSET 0x800
 #define BCTL_METADATA_MAGIC 0x43425845
