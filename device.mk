@@ -10,6 +10,7 @@ PRODUCT_PACKAGES += \
     otapreopt_script \
     cppreopts.sh \
     update_engine \
+    update_engine_sideload \
     update_verifier
 
 AB_OTA_POSTINSTALL_CONFIG += \
