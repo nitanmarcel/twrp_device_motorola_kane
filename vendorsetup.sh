@@ -1,1 +1,1 @@
-add_lunch_combo omni_troika-eng
+add_lunch_combo omni_kane-eng

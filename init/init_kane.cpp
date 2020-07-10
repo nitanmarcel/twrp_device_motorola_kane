@@ -43,13 +43,6 @@ void vendor_load_properties() {
 //    std::string boot_device = android::base::GetProperty("ro.boot.device", "");
 
 //    switch (boot_device) {
-//    case troika:
-        /* Moto One Action */
-        property_set("ro.product.model", "Motorola_One_Action");
-        property_set("ro.build.product", "one_action");
-        property_set("ro.product.device", "one_action");
-        property_set("ro.vendor.product.device", "one_action");
-//        break;
 //    case kane:
 //        /* Moto One Vision */
 //        property_set("ro.product.model", "Motorola_One_Vision");

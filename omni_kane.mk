@@ -15,7 +15,7 @@
 #
 
 # Release name
-PRODUCT_RELEASE_NAME := troika
+PRODUCT_RELEASE_NAME := kane
 
 $(call inherit-product, build/target/product/embedded.mk)
 
@@ -23,19 +23,19 @@ $(call inherit-product, build/target/product/embedded.mk)
 $(call inherit-product, vendor/omni/config/common.mk)
 
 # Inherit from hardware-specific part of the product configuration
-$(call inherit-product, device/motorola/troika/device.mk)
+$(call inherit-product, device/motorola/kane/device.mk)
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := troika
-PRODUCT_NAME := omni_troika
+PRODUCT_DEVICE := kane
+PRODUCT_NAME := omni_kane
 PRODUCT_BRAND := motorola
 PRODUCT_MODEL := moto one
 PRODUCT_MANUFACTURER := motorola
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_NAME=troika \
-    BUILD_PRODUCT=troika \
-    TARGET_DEVICE=troika
+    PRODUCT_NAME=kane \
+    BUILD_PRODUCT=kane \
+    TARGET_DEVICE=kane
 
 PRODUCT_SYSTEM_PROPERTY_BLACKLIST += \
     ro.product.model \

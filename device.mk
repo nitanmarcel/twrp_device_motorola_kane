@@ -1,5 +1,5 @@
 
-LOCAL_PATH := device/motorola/troika
+LOCAL_PATH := device/motorola/kane
 
 # define hardware platform
 PRODUCT_PLATFORM := exynos9610

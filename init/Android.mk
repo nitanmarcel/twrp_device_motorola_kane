@@ -22,7 +22,7 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_C_INCLUDES := \
     system/core/base/include \
     system/core/init
-LOCAL_SRC_FILES := init_troika.cpp
-LOCAL_MODULE := libinit_troika
+LOCAL_SRC_FILES := init_kane.cpp
+LOCAL_MODULE := libinit_kane
 
 include $(BUILD_STATIC_LIBRARY)

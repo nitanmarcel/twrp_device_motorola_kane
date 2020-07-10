@@ -54,8 +54,8 @@ BOARD_RAMDISK_OFFSET := 0x00000000
 BOARD_TAGS_OFFSET := 0x00000000
 BOARD_SECOND_OFFSET := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
-TARGET_PREBUILT_KERNEL := device/motorola/troika/prebuilt/Image
-INSTALLED_2NDBOOTLOADER_TARGET  := device/motorola/troika/prebuilt/second.img
+TARGET_PREBUILT_KERNEL := device/motorola/kane/prebuilt/Image
+INSTALLED_2NDBOOTLOADER_TARGET  := device/motorola/kane/prebuilt/second.img
 BOARD_BOOTIMG_HEADER_VERSION := 1
 BOARD_HEADER_SIZE := 1648
 
@@ -65,7 +65,7 @@ BOARD_MKBOOTIMG_ARGS := --base $(BOARD_KERNEL_BASE) --pagesize $(BOARD_KERNEL_PA
 TARGET_BOARD_PLATFORM := exynos5
 TARGET_BOARD_PLATFORM_GPU := mali-g72
 
-PRODUCT_SOONG_NAMESPACES += device/motorola/troika
+PRODUCT_SOONG_NAMESPACES += device/motorola/kane
 TARGET_RECOVERY_DEVICE_MODULES += android.hardware.boot@1.0-impl.exynos
 
 # Partitions
@@ -88,8 +88,8 @@ BOARD_USES_RECOVERY_AS_BOOT := true
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 
 # Partitions (listed in the file) to be wiped under recovery.
-TARGET_RECOVERY_WIPE := device/motorola/troika/recovery.wipe
-TARGET_RECOVERY_FSTAB := device/motorola/troika/recovery.fstab
+TARGET_RECOVERY_WIPE := device/motorola/kane/recovery.wipe
+TARGET_RECOVERY_FSTAB := device/motorola/kane/recovery.fstab
 
 
 # Workaround for error copying vendor files to recovery ramdisk
@@ -97,8 +97,8 @@ BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_COPY_OUT_VENDOR := vendor
 
 #Init
-TARGET_INIT_VENDOR_LIB := libinit_troika
-TARGET_RECOVERY_DEVICE_MODULES := libinit_troika
+TARGET_INIT_VENDOR_LIB := libinit_kane
+TARGET_RECOVERY_DEVICE_MODULES := libinit_kane
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc/
 
 # Recovery
@@ -139,7 +139,7 @@ AB_OTA_PARTITIONS += \
 BOARD_SUPPRESS_SECURE_ERASE := true
 #TW_USE_LEDS_HAPTICS := true
 USE_RECOVERY_INSTALLER := true
-RECOVERY_INSTALLER_PATH := device/motorola/troika/installer
+RECOVERY_INSTALLER_PATH := device/motorola/kane/installer
 TW_EXCLUDE_TWRPAPP := true
 TW_INCLUDE_REPACKTOOLS := true
 TWRP_INCLUDE_LOGCAT := true
