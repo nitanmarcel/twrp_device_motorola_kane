@@ -1,4 +1,4 @@
-# Device Tree for Motorola One Action/One Vision (troika, kane)
+# Device Tree for Motorola One Action/One Vision (kane) Fixed Android 9
 
 The Motorola One Action/One Vision (codenamed _"troika/kane"_) is a flagship smartphone from motorola.
 
@@ -15,7 +15,7 @@ Then add these string to .repo/manifests/remove.xml
 Then add these projects to .repo/local_manifests/roomservice.xml (If you don't have it, you can add them to .repo/manifest.xml): 
 
 ```xml
-<project name="deadman96385/twrp_device_motorola_troika" path="device/motorola/troika" remote="github" revision="android-9.0" />
+<project name="nitanmarcel/twrp_device_motorola_kane" path="device/motorola/kane" remote="github" revision="android-9.0-stricted" />
 ```
 
 Now you can sync your source:
@@ -32,16 +32,16 @@ Finally execute these:
 . build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true
 export LC_ALL=C
-lunch omni_troika-eng 
+lunch omni_kane-eng 
 mka adbd recoveryimage 
 ```
 
 To test it:
 
 ```
-fastboot boot out/target/product/troika/recovery.img
+fastboot boot out/target/product/kane/recovery.img
 ```
 
-Kernel Source: https://github.com/deadman96385/android_kernel_motorola_exynos9610
+Kernel Source: https://github.com/nitanmarcel/android_kernel_motorola_exynos9610
 ## Credits
 Thanks to @dianlujitao for the base multidevice commit: https://github.com/TeamWin/android_device_motorola_motorola3/tree/android-9.0/init
